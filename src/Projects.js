@@ -22,30 +22,29 @@ const Project = () => {
     if (error) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>;
     } else {
         return (
             <div>
-                <h6>My projects</h6>
+                <h5>My projects</h5>
 
-                 <table class="table">
-                <tr>
-                    <th>Project</th>
-                    <th>Description</th>
-                </tr>
-                {projects.map(project => (
-                    <tr>
-                        <td key={project.id}>
-                        <a href={project.url} target="_blank">{project.name}
-                            </a>
-                        </td>
-                        <td key={project.id}>TODO
-                        </td>
-                    </tr>
-                ))}
-            </table>
+                <table class="table">
+
+                    {projects.map(project => (
+                        <tr>
+                            <td key={project.id}>
+                                <a href={project.url} target="_blank">{project.name}
+                                </a>
+                            </td>
+                            <td key={project.id}>TODO
+                            </td>
+                        </tr>
+                    ))}
+                </table>
             </div>
-           
+
         );
     }
 }
