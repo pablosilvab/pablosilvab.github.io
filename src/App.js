@@ -1,3 +1,4 @@
+import Project from "./Projects";
 
 function App() {
   return (
@@ -10,12 +11,9 @@ function App() {
           <p class="lead">Welcome! This website contains some features that I develop in my free time.
             If you need contact me, write me to <a href="mailto:pablonicolassilvabravo@gmail.com" class="link-primary">my email</a>
             :) </p>
-          <p></p>
-        </div>
 
+          <Project />
 
-        <div class="container">
-       
         </div>
       </main>
     </div>
