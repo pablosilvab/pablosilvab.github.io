@@ -5,6 +5,7 @@ const Project = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [projects, setProjects] = useState([]);
+
     useEffect(() => {
         fetch("https://demo-backend-spring-boot.herokuapp.com//api/v1/projects/")
             .then(res => res.json())
@@ -19,6 +20,7 @@ const Project = () => {
                 }
             )
     }, [])
+
     if (error) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -28,10 +30,14 @@ const Project = () => {
     } else {
         return (
             <div>
-                <h5>My projects</h5>
+                <main class="flex-shrink-0">
+                    <div class="container">
+                        <h1 class="mt-5">My projects</h1>
+                        <hr />
 
+                    </div>
+                </main>
                 <table class="table">
-
                     {projects.map(project => (
                         <tr>
                             <td key={project.id}>

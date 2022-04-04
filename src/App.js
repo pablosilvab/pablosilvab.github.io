@@ -1,22 +1,25 @@
-import Project from "./Projects";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Blogs from "./components/Blog";
+import Contact from "./components/Contact";
+import Home from "./components/Home";
+import Layout from "./components/Layout";
+import NoPage from "./components/NoPage";
+import Project from "./components/Projects";
 
 function App() {
   return (
-    <div className="App">
-      <main class="flex-shrink-0">
-        <div class="container">
-          <h1 class="mt-5">Pablo Silva</h1>
-          <h5 class="mt-3">Backend Developer</h5>
-          <hr />
-          <p class="lead">Welcome! This website contains some features that I develop in my free time.
-            If you need contact me, write me to <a href="mailto:pablonicolassilvabravo@gmail.com" class="link-primary">my email</a>
-            :) </p>
-
-          <Project />
-
-        </div>
-      </main>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="projects" element={<Project />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
