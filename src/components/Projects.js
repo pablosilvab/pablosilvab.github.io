@@ -7,7 +7,7 @@ const Project = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        fetch("https://demo-backend-spring-boot.herokuapp.com//api/v1/projects/")
+        fetch("https://demo-backend-spring-boot.herokuapp.com/api/v1/projects/")
             .then(res => res.json())
             .then(
                 (data) => {
