@@ -2,20 +2,23 @@ import { useState } from "react";
 
 
 const Contact = () => {
-
+    const [name, setName] = useState("");
+    const [contact, setContact] = useState("");
     const [emailSubject, setEmailSubject] = useState("");
     const [emailMessage, setEmailMessage] = useState("");
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-       await fetch("https://demo-backend-spring-boot.herokuapp.com/email/", {
+        await fetch("https://demo-backend-spring-boot.herokuapp.com/email/", {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             method: "POST",
             body: JSON.stringify({
+                name: name,
+                contact: contact,
                 subject: emailSubject,
                 text: emailMessage,
             }),
@@ -40,16 +43,37 @@ const Contact = () => {
 
             <form onSubmit={handleSubmit}>
                 <div class="form-group">
+                    <label>Name</label>
                     <input
                         className="form-control"
                         type="text"
-                        placeholder="Subject..."
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
+                <br /> <div class="form-group">
+                    <label>Contact</label>
+                    <input
+                        className="form-control"
+                        type="text"
+                        value={contact}
+                        onChange={(e) => setContact(e.target.value)}
+                    />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input
+                        className="form-control"
+                        type="text"
                         value={emailSubject}
                         onChange={(e) => setEmailSubject(e.target.value)}
                     />
                 </div>
                 <br />
                 <div class="form-group">
+                    <label>Message</label>
+
                     <textarea
                         className="form-control"
                         type="text"
