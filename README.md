@@ -1,6 +1,6 @@
 # Hello World
 
-This is my space. I 
+This is my space. 
 
 ## Prerequisites
 
