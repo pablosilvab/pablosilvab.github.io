@@ -1,4 +1,5 @@
 import admintasks from './../img/admintasks.png'
+import breaking from './../img/breaking.png'
 
 const Home = () => {
     return (
@@ -16,7 +17,8 @@ const Home = () => {
                 :)
             </p>
 
-            <h3 className="mt-5">My Projects</h3>
+
+            <h4 className="mt-4">My projects</h4>
             <br />
 
             <div className="card mb-3">
@@ -30,6 +32,19 @@ const Home = () => {
                     <p className="card-text"><small class="text-muted">Tools: React, Node JS, Mongo DB, Heroku.</small></p>
                 </div>
             </div>
+            <div className="card mb-3">
+                <a href='https://agitated-spence-fe5db4.netlify.app/' target="_blank" >
+                    <img src={breaking} className="img-thumbnail" alt="Responsive image" />
+
+                </a>
+                <div className="card-body">
+                    <h5 className="card-title">Breaking Bad</h5>
+                    <p className="card-text">
+                        A web application that shows phrases from
+                        the best series in history: Breaking Bad.</p>
+                </div>
+            </div>
+
 
 
 

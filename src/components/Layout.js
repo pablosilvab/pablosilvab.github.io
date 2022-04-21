@@ -18,9 +18,6 @@ const Layout = () => {
                             <li class="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/blogs">Blogs</Link>
                             </li>
-                            <li class="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/contact">Contact</Link>
-                            </li>
                         </ul>
                     </div>
                 </div>
